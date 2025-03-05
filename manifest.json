@@ -21,7 +21,7 @@
     ],
   "screenshots": [
     {
-      "src": "icons/PC.PNG",
+      "src": "icons/PC.png",
       "sizes": "1350x607",
       "type": "image/png",
       "form_factor": "wide"
