@@ -61,6 +61,13 @@ h1 {
 .weather-icon {
     width: 100px;
     filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+    animation: float 3s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+    100% { transform: translateY(0px); }
 }
 
 .forecast .card {
