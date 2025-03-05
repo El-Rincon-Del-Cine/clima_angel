@@ -99,17 +99,18 @@ function mostrarClima(data) {
 
 // Mostrar pronóstico de 5 días con animaciones
 function mostrarPronostico(data) {
-    let contenido = `<h4 class="text-center animate__animated animate__fadeIn">Pronóstico de 5 días</h4><div class="row justify-content-center">`;
+    let contenido = `<h4 class="text-center animate__animated animate__fadeIn">Pronóstico de 5 días</h4><div class="container"><div class="row justify-content-center">`;
 
-    const diasPronostico = data.list.filter((item, index) => index % 8 === 0);
+    // Tomamos los primeros 6 registros en intervalos regulares
+    const diasPronostico = data.list.filter((item, index) => index % 8 === 0).slice(0, 6);
 
-    diasPronostico.forEach(dia => {
+    diasPronostico.forEach((dia, i) => {
         const fecha = new Date(dia.dt * 1000).toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'short' });
         const icono = dia.weather[0].icon;
         const iconoLocal = obtenerIconoLocal(icono);
 
         contenido += `
-            <div class="col-md-3">
+            <div class="col-md-4">
                 <div class="card bg-dark text-white mb-3 animate__animated animate__zoomIn">
                     <div class="card-body text-center">
                         <h6>${fecha}</h6>
@@ -119,15 +120,17 @@ function mostrarPronostico(data) {
                     </div>
                 </div>
             </div>
-       `;
+        `;
+
+        if ((i + 1) % 3 === 0) {
+            contenido += `</div><div class="row justify-content-center">`;
+        }
     });
 
-    contenido += `</div>`;
+    contenido += `</div></div>`;
     document.getElementById('forecast').innerHTML = contenido;
 
     document.querySelectorAll('.forecast-icon').forEach(icono => {
         icono.classList.add('animate__animated', 'animate__bounceIn');
     });
 }
-
-

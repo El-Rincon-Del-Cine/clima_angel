@@ -57,20 +57,10 @@ h1 {
     transform: scale(1.05);
 }
 
-/* Iconos del clima */
-.weather-icon {
-    width: 100px;
-    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
-    animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
-}
+/* Iconos del clima 
 
-/* Iconos de los pronósticos de 5 días */
-.forecast-icon {
-    width: 80px;
-    display: block;
-    margin: 0 auto;
-    animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
-}
+
+/* Iconos de los pronósticos de 5 días
 
 /* Animaciones */
 @keyframes fadeInUp {
@@ -82,10 +72,12 @@ h1 {
     animation: fadeInUp 0.5s ease-in-out;
 }
 
-/* Animación de rebote al aparecer */
+/* Animación de rebote más rápida */
 @keyframes bounceIn {
     0% { transform: scale(0.5); opacity: 0; }
-    50% { transform: scale(1.1); opacity: 1; }
+    40% { transform: scale(1.2); opacity: 1; }
+    60% { transform: scale(0.9); }
+    80% { transform: scale(1.05); }
     100% { transform: scale(1); }
 }
 
@@ -96,6 +88,14 @@ h1 {
     100% { transform: translateY(0px); }
 }
 
+/* Aplicar la animación con duración más corta */
+.weather-icon, .forecast-icon {
+    width: 100px;
+    filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
+    animation: bounceIn 0.2s ease-in-out, floatAnimation 2.0s infinite ease-in-out;
+}
+
+/* Ajuste del margen para las tarjetas del pronóstico */
 .forecast .card {
     margin: 10px;
 }
