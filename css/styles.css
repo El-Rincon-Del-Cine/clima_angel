@@ -9,7 +9,7 @@ body {
     padding: 20px;
 }
 
-/* mi contenedor que tiene dentro el clima de la ciudad */
+/* Contenedor principal */
 .container {
     max-width: 600px;
     background: rgba(255, 255, 255, 0.1);
@@ -27,7 +27,7 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* mi estilo para mi barra de búsqueda */
+/* Estilos para la barra de búsqueda */
 .input-group input {
     border-radius: 10px;
 }
@@ -44,7 +44,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* mis estilos para los pronósticos de la ciudad */
+/* Tarjetas de pronóstico */
 .card {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
@@ -64,9 +64,11 @@ h1 {
     animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
 }
 
-/* Iconos de los pronósticos */
-.forecast .weather-icon {
+/* Iconos de los pronósticos de 5 días */
+.forecast-icon {
     width: 80px;
+    display: block;
+    margin: 0 auto;
     animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
 }
 
