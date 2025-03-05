@@ -113,7 +113,7 @@ function mostrarPronostico(data) {
                 <div class="card bg-dark text-white mb-3 animate__animated animate__zoomIn">
                     <div class="card-body text-center">
                         <h6>${fecha}</h6>
-                        <img src="${iconoLocal}" alt="Icono del clima" width="80">
+                        <img src="${iconoLocal}" class="forecast-icon" alt="Icono del clima">
                         <h5>${dia.main.temp}°C</h5>
                         <p>${dia.weather[0].description}</p>
                     </div>
@@ -124,6 +124,10 @@ function mostrarPronostico(data) {
 
     contenido += `</div>`;
     document.getElementById('forecast').innerHTML = contenido;
+
+    document.querySelectorAll('.forecast-icon').forEach(icono => {
+        icono.classList.add('animate__animated', 'animate__bounceIn');
+    });
 }
 
 
