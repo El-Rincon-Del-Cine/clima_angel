@@ -27,12 +27,12 @@ h1 {
     margin-bottom: 20px;
 }
 
-/* mi estilo para mi barra de busqueda */
+/* mi estilo para mi barra de búsqueda */
 .input-group input {
     border-radius: 10px;
 }
 
-/* Botón de busqueda */
+/* Botón de búsqueda */
 .btn-primary {
     border-radius: 10px;
     font-weight: bold;
@@ -44,7 +44,7 @@ h1 {
     transform: scale(1.05);
 }
 
-/* mis estilos para los pronosticos de la ciudad */
+/* mis estilos para los pronósticos de la ciudad */
 .card {
     border-radius: 15px;
     box-shadow: 0 4px 10px rgba(255, 255, 255, 0.2);
@@ -61,17 +61,13 @@ h1 {
 .weather-icon {
     width: 100px;
     filter: drop-shadow(2px 2px 10px rgba(255, 255, 255, 0.5));
-    animation: float 3s infinite ease-in-out;
+    animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
 }
 
-@keyframes float {
-    0% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
-    100% { transform: translateY(0px); }
-}
-
-.forecast .card {
-    margin: 10px;
+/* Iconos de los pronósticos */
+.forecast .weather-icon {
+    width: 80px;
+    animation: bounceIn 0.8s ease-in-out, floatAnimation 3s infinite ease-in-out;
 }
 
 /* Animaciones */
@@ -82,4 +78,22 @@ h1 {
 
 .animate-fadeIn {
     animation: fadeInUp 0.5s ease-in-out;
+}
+
+/* Animación de rebote al aparecer */
+@keyframes bounceIn {
+    0% { transform: scale(0.5); opacity: 0; }
+    50% { transform: scale(1.1); opacity: 1; }
+    100% { transform: scale(1); }
+}
+
+/* Movimiento flotante suave */
+@keyframes floatAnimation {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-8px); }
+    100% { transform: translateY(0px); }
+}
+
+.forecast .card {
+    margin: 10px;
 }
