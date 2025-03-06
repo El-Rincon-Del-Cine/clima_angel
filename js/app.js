@@ -84,7 +84,7 @@ function mostrarClima(data) {
     const icono = data.weather[0].icon;
     const iconoLocal = obtenerIconoLocal(icono);
 
-    document.getElementById('weatherresult').innerHTML = `
+    document.getElementById('weatherresult').insertAdjacentHTML = `
         <div class="card text-white animate-fadeIn">
             <div class="card-body text-center">
                 <h3 class="card-title">${data.name}, ${data.sys.country}</h3>
