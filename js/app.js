@@ -84,18 +84,17 @@ function mostrarClima(data) {
     const icono = data.weather[0].icon;
     const iconoLocal = obtenerIconoLocal(icono);
 
-    document.getElementById('weatherresult').insertAdjacentHTML('beforeend', `
-    <div class="card text-white animate-fadeIn">
-        <div class="card-body text-center">
-            <h3 class="card-title">${data.name}, ${data.sys.country}</h3>
-            <img src="${iconoLocal}" class="weather-icon" alt="Clima">
-            <h4>${data.main.temp}°C</h4>
-            <p>${data.weather[0].description}</p>
-            <p>Humedad: ${data.main.humidity}% | Viento: ${data.wind.speed} m/s</p>
-            <p>Temperatura: ${data.main.temp}°C <br> Clima: ${data.weather[0].description}</p>
+    document.getElementById('weatherresult').innerHTML = `
+        <div class="card text-white animate-fadeIn">
+            <div class="card-body text-center">
+                <h3 class="card-title">${data.name}, ${data.sys.country}</h3>
+                <img src="${iconoLocal}" class="weather-icon" alt="Clima">
+                <h4>${data.main.temp}°C</h4>
+                <p>${data.weather[0].description}</p>
+                <p>Humedad: ${data.main.humidity}% | Viento: ${data.wind.speed} m/s</p>
+            </div>
         </div>
-    </div>
-`);
+    `;
 }
 
 // Mostrar pronóstico de 5 días con animaciones
